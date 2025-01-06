@@ -472,13 +472,13 @@ const products = [
   {
     id: "id1",
     image: "images/products/backpack.jpg",
-    name: "30L Backpack - Black",
+    name: "Travel Backpack - Black",
     rating: {
       stars: 5,
       count: 812,
     },
     priceCents: 2000,
-    keywords: ["travel", "30l"],
+    keywords: ["travel", "outdoors"],
   },
   {
     id: "id2",
