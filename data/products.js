@@ -30,11 +30,29 @@ class Product{
     return `$${formatCurrency(this.priceCents)}`
   }
 
+  extraInfoHTML(){
+    return ""
+  }
+
   id;
   image;
   name;
   rating;
   priceCents;
+}
+
+class Clothing extends Product{
+
+  constructor(productDetails) {
+    super(productDetails)
+    this.sizeChartLink = productDetails.sizeChartLink
+  }
+
+  extraInfoHTML(){
+    return `<a href="${this.sizeChartLink}" target="_blank">Size chart</a>`
+  }
+
+  sizeChartLink;
 }
 
 export const products = [
@@ -531,5 +549,8 @@ export const products = [
     keywords: ["rain", "outdoors"],
   },
 ].map((productDetails) => {
+  if (productDetails.type === "clothing") {
+    return new Clothing(productDetails)
+  }
   return new Product(productDetails)
 });
